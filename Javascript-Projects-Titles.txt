@@ -1,0 +1,443 @@
+0) Duplicate a HTML Div container, which can be upto any hierarchy
+1) Rows and Columns - accept no. of rows and columns from user and build a table
+2) Rotate a String - accept string from user and rotate the string (if "target" entered, then it will move like argett, rgetta, gettar, etc.,)
+ANS
+====
+	let str=prompt("Enter a Name:");
+
+	function rotatestring(str)
+	{
+    
+   		let newstr;
+    		let counter=0;
+    		do
+    		{   
+			for(let i=0; i<=str.length; i++)
+        		{
+            		newstr= str.slice(1,str.length) + str.slice(0,1);
+        		}
+        		counter++;
+        		str=newstr;
+       		console.log( newstr);
+    		}while(counter<str.length)
+    
+   		return ;
+	}
+ 	rotatestring(str); //function call
+
+	O/P:
+	====
+		Enter a Name: target
+		target
+		argett
+		rgetta
+		gettar
+		ettarg
+		ttarge
+		target
+3) Remove a character at the specified position of a given string and return the new string - accept the string, and the position to remove from the user
+ANS:
+====
+	let arr= [1,2,3,4,5,6,7,8];
+	let pos= 3;
+	arr.splice(pos,1);
+	console.log(arr);
+O/P:
+===
+	[1, 2, 3, 5, 6, 7, 8]
+
+4) Count the number of vowels in a given string - accept the string from user
+
+ANS:
+====
+	let arr= ['A','B','C','D','A','E','I','O','P','U','O'];
+	let counter= 0, i=0;
+	for(let i=0; i<=arr.length ;i++)
+	{
+    		switch(arr[i])
+    		{
+        		case 'A': counter++;
+                  	    break;
+       	      case 'E': counter++;
+                            break;
+                  case 'I': counter++;
+                            break;
+                  case 'O': counter++;
+                            break;
+                  case 'U': counter++;
+                            break;
+    		}
+	}
+	console.log(counter);
+O/P:
+====
+	7
+
+5) Swap the first and last elements of a given array of integers
+
+ANS:
+====
+	let arr= ['A','B','C','D','A','E','I','O','P','U','O'];
+	let temp='';
+	temp=arr[arr.length-1];
+	arr[arr.length-1]=arr[0];
+	arr[0]=temp;
+	console.log(arr);
+
+O/P:
+====
+	['O', 'B', 'C', 'D','A', 'E', 'I', 'O','P', 'U', 'A']
+
+6) Calculate the sum of n + n/2 + n/4 + n/8 + .... - accept the number from the user
+
+	ANS:
+	===
+	let num=0;
+	function mySum(num)
+	{
+   	   for(let i=2; i<=8;i=i+2)
+    	   {
+        	num += (num/i);
+    	   }
+   	   return num;
+	}
+
+	num= prompt("Enter a Number:");
+	console.log(mySum(parseInt(num)));
+
+	O/P:
+	====
+		Enter a Number:8
+		19.6875          //sum upto n/8 iteration
+
+
+7) Find longest string from a given array
+
+	ANS:
+	====
+		function Findlongstring()
+		{
+    			let arr=["target", "achievement","Aim","Hardwork", "smartwork"];
+    			let str1="";
+    			let str2="";
+    			let longstr="";
+    
+      		for(let i=0; i<=arr.length; i++)
+        		{
+            		j=i+1;
+           			if(j<arr.length)
+            		{
+                		   str1= arr[i];
+                	         str2= arr[j];
+                
+                		if(longstr.length<str1.length || longstr.length <str2.length)
+                		{
+                    		(str1.length > str2.length) ? (longstr= str1) : (longstr=str2);
+                		}
+                
+            		}
+        		}
+        
+    			return longstr;
+		}
+
+ 			console.log(Findlongstring());//Function call
+	O/P:
+	====
+			achievement
+
+
+8) Palindrome
+
+	ANS:
+     =====
+		function palindromeFun (str )  
+		{  
+			// convert the string into an array using the string.split() function  
+		  const arrValue = string.split (''); //    ["A", "P", "P", "L", "E"]
+  
+			// use reverse() method to reverse the array values  
+		  const reveArrVal = arrValue.reverse();  // ["E", "L", "P", "P", "A"] 
+  
+			// use join() method to group the array values into the string  
+		  const revString = reveArrVal.join('');  "ELPPA"
+  
+		  if (string == revString) // if string condition is equal to the revString  
+		  {  
+		    console.log('It is a Palindrome string '); // print the Palindrome   
+		  }  
+		  else {  
+		    console.log (' It is not a Palindrome string' ); // if the condition is not true.  
+		  }  
+			return revString;
+		}  
+		
+		const string = "MADAM";  
+		const value = palindromeFun (string); // call the function  
+		console.log(value, string);  
+	O/P:
+	====
+		It is a Palindrome string 
+		MADAM MADAM
+
+9) Prime Number (divisble by 1 and its own number)
+ 
+	ANS:
+	====
+		 // take input from the user
+		const number = parseInt(prompt("Enter a positive number: "));
+		let isPrime = true;
+
+		  // check if number is equal to 1
+		if (number === 1)
+		 {
+    			console.log("1 is neither prime nor composite number.");
+		}		  
+		else if (number > 1)// check if number is greater than 1
+		{
+
+    		   // looping through 2 to number-1
+    		  for (let i = 2; i < number; i++)
+		  {
+        		if (number % i == 0)
+			{
+            	  isPrime = false;
+            	  break;
+        	      }
+   		  }
+
+    		 if (isPrime) 
+        		console.log(`${number} is a prime number`);
+    		 else 
+       	  console.log(`${number} is a not prime number`);
+		}
+		else // check if number is less than 1
+ 		{
+    		  console.log("The number is not a prime number.");
+		}
+
+	O/P:
+	===
+		Enter a positive number: 19
+		19 is a prime number
+
+10) Fibonacci Series (0, 1, 1, 2, 3, 5, 8, 13, 21, 34....)
+
+	ANS
+	===
+		// program to generate fibonacci series up to n terms
+
+		// take input from the user
+		const number = parseInt(prompt('Enter the number of iterations: '));
+		let num1 = 0, num2 = 1, nextTerm;
+	
+		console.log('Fibonacci Series:');
+
+		for (let i = 1; i <= number; i++) 
+		{
+		    console.log(n1);
+		    nextTerm = num1 + num2;
+		    num1 = num2;
+		    num2 = nextTerm;
+		}
+
+	O/P:
+	====
+		Enter the number of terms: 9
+		Fibonacci Series:
+		0
+		1
+		1
+		2
+		3
+		5
+		8
+		13
+		21
+
+11) Factorial of a number (6 = 6 x 5 x 4 x 3 x 2 x 1 = 720)
+	ANS
+	===
+
+		let num;
+		function FactorOfTheNum(num)
+		{
+   		   let fact=parseInt(num);
+    		   for(let i=1; i<fact; i++)
+    		   { 
+       		num=(num*(i)) ;
+    		   }
+    		   return num;
+		}
+
+		num= prompt("Enter a Number:");
+		console.log(FactorOfTheNum(parseInt(num))); //fUNCTION CALL
+	O/P:
+	===
+		Enter a Number:9
+		362880
+
+12) Construct a pattern (using loop) - get the total number from user
+^
+^^
+^^^
+^^^^
+^^^^^
+^^^^^^
+
+	ANS:
+	====
+		const itr = parseInt(prompt('Enter the number of iterations: '));
+		function myFnc(itr)
+		{
+		    let str="";
+     
+		    for (let i = 0; i < itr; i++) 
+		    {
+		        str=str+"*";
+		        console.log(str);
+		    }
+		}
+
+		myFnc(itr); //Function call
+
+	O/P:
+	====
+		Enter the number of iterations: 9
+		*
+		**
+		***
+		****
+		*****
+		******
+		*******
+		********
+		*********
+13) Pyramid pattern (using loop)
+
+     *
+    ***
+   *****
+  *******
+ *********
+***********
+ *********
+  *******
+   *****
+    ***
+     *
+	ANS:
+	====
+		let rows=1;
+
+		function myPattern(rows)
+		{
+    			let strPattern="";
+   			let stars =1;// stars+=2;
+    			let spaces= Math.abs(rows-stars);
+    			console.log(spaces);
+    			for(let i=1; i <= parseInt((rows/2))+(rows%2); i++)   
+    			{
+        		   for(let x=1; x<= parseInt(spaces/2); x++)
+        		   {
+            		strPattern+=" ";
+        		   }
+        		   for(let j=1; j<=stars; j++)
+        		   {
+          			strPattern+="*";
+			   }
+        		   for(let y=1; y<=parseInt(spaces/2); y++)
+       		   {
+            		strPattern+=" ";
+        		   }
+        
+        		   strPattern+="\n";
+        		   stars+=2;
+        		   spaces= Math.abs(rows-stars);
+        
+    			}
+    			stars=parseInt(stars-2);
+    
+   			for(let i=1; i <= parseInt((rows/2)); i++)   
+   			 {
+       			 stars = parseInt(stars-2);
+       			 spaces= Math.abs(stars-rows);
+        
+        			for(let x=1; x<=spaces/2; x++)
+       			 {
+           				 strPattern+=" ";
+        			}
+        			for(let j=1; j<=stars; j++)
+        			{
+          				strPattern+="*";
+        			}
+        			for(let y=1; y<=spaces/2; y++)
+        			{
+           			  strPattern+=" ";
+        			}
+        			strPattern+="\n";
+    			}
+    			console.log(strPattern);
+		}
+
+
+		myPattern(50);// Function call
+
+	O/P:
+	====
+				*
+			     ***                       
+                      *****                      
+                     *******                     
+                    *********                    
+                   ***********                   
+                  *************                  
+                 ***************                 
+                *****************                
+               *******************               
+              *********************              
+             ***********************             
+            *************************            
+           ***************************           
+          *****************************          
+         *******************************         
+        *********************************        
+       ***********************************       
+      *************************************      
+     ***************************************     
+    *****************************************    
+   *******************************************   
+  *********************************************  
+ *********************************************** 
+*************************************************
+ *********************************************** 
+  *********************************************  
+   *******************************************   
+    *****************************************    
+     ***************************************     
+      *************************************      
+       ***********************************       
+        *********************************        
+         *******************************         
+          *****************************          
+           ***************************           
+            *************************            
+             ***********************             
+              *********************              
+               *******************               
+                *****************                
+                 ***************                 
+                  *************                  
+                   ***********                   
+                    *********                    
+                     *******                     
+                      *****                      
+                       ***                       
+                        *                        
+
+
+14) Form Validations
+15) JavaScript calculator
+16) Task List (Add, Delete)
+17) Progress Bar
+18) Collapsible Container with Content (toggle)
